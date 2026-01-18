@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.model.Account;
 import org.example.model.Counter;
+import org.example.model.StopWatch;
 import org.example.thread.MyThread1;
 import org.example.thread.MyThread2;
 
@@ -44,6 +45,8 @@ public class Main {
                 }
             }));
         }
+        StopWatch sw = new StopWatch();
+        sw.start();
 
         threadList.forEach(Thread::start);
         threadList.forEach(t-> {
@@ -57,7 +60,7 @@ public class Main {
 
         //for(int i=0;i<10;i++);
 
-
+        System.out.println("Elapsed time: " + sw.elapsedMillis() + " ms");
         System.out.println(c.getCount());
 
 
